@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
-
+import Header from "./components/header/Header";
+import PreQualification from "./components/cliam/PreQualification";
+import {Box} from "@mui/material";
+import "./App.css"
+import Homestep from "./components/cliam/multiformsteps/Homestep";
+import Footer from "./components/footer/Footer";
+import {Routes,Route} from "react-router-dom";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+   <>
+   
+   <Header></Header>
+   <Box style={{marginTop:"60px"}}>
+ 
+   <Routes>
+   <Route path='/' element={<PreQualification/>}/>
+   <Route path='/formstep' element={<Homestep/>}/>
+   
+   </Routes>
+
+
+
+<Footer></Footer>
+   
+   </Box>
+
+   
+   
+   </>)
 }
 
 export default App;
